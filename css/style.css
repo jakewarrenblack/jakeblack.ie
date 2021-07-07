@@ -7,7 +7,7 @@
 }
 
 .black-curtain{
-    background:black;
+    background:#0f0e0e;
     width: 100vw;
     height:100vh;
     z-index:2;
@@ -19,7 +19,54 @@
 @keyframes move {
     from {transform:translateX(0%);}
     to {transform:translateX(-100%);}
-  }
+}
+
+@keyframes zoomInDown {
+    0% {
+        opacity:0;
+        -webkit-transform:scale3d(.1,.1,.1) translate3d(0,-1000px,0);
+        transform:scale3d(.1,.1,.1) translate3d(0,-1000px,0);
+        -webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);
+        animation-timing-function:cubic-bezier(.55,.055,.675,.19)
+    }
+    60% {
+        opacity:1;
+        -webkit-transform:scale3d(.475,.475,.475) translate3d(0,60px,0);
+        transform:scale3d(.475,.475,.475) translate3d(0,60px,0);
+        -webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);
+        animation-timing-function:cubic-bezier(.175,.885,.32,1)
+    }
+}
+
+a.d-contents div{
+    -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+a.d-contents:nth-child(1) div {	
+    animation-delay:0.5s;
+}
+
+a.d-contents:nth-child(2) div{
+    animation-delay:1s;
+}
+
+a.d-contents:nth-child(3) div{
+    animation-delay:1.5s
+}
+
+@keyframes slide-in-left {
+    0% {
+        -webkit-transform: translateX(-1000px);
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 
 body{
     width:100vw;
@@ -27,7 +74,7 @@ body{
 }
 
 .iadt-link{
-    color:black;
+    color:white;
 }
 
 .projects, .skills{
@@ -40,6 +87,7 @@ body{
     display:flex;
     flex-direction:column;
     justify-content:center;
+    background:#0f0e0e
 }
 
 .landing, .projects, .skills, .contact-links{
@@ -62,8 +110,8 @@ body{
 }
 
 .contact-link{
-    border:0.25rem solid black;
-    color:black;
+    border:0.25rem solid #2A9D8F;
+    color:white;
     font-size:var(--step-2);
     padding:0.75rem 4rem;    
     border-radius:1rem;
@@ -77,8 +125,7 @@ body{
 }
 
 .contact-link:hover{
-    background:black;
-    color:white;
+    color:#2A9D8F;
 }
 
 :root {
@@ -92,9 +139,55 @@ body{
     --step-5: clamp(3.27rem, 2.75rem + 2.56vw, 4.58rem);
 }
 
+.landing-background{
+    z-index:3;
+}
+
+.landing-foreground{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    background:#0f0e0e
+}
+
+
+
+.landing-circle:nth-child(1){
+    position:absolute;
+    top:25%;
+    left:20%;
+    animation:float 3s infinite;
+}
+
+.landing-circle:nth-child(2){
+    position:absolute;
+    top:40%;
+    left:60%;
+    animation: float 4s infinite;
+}
+
+@keyframes float{
+    
+    0%{
+        transform:translateY(4%);
+    }
+    60%{
+        transform:translateY(0%);
+    }
+    100%{
+        transform:translateY(4%);
+    }
+}
+
 .my-name{
     font-size:var(--step-5);
     font-weight:700;
+    animation-delay: 0.5s;
+    animation-fill-mode:both;
+    animation-duration:1s;
+    animation-name:zoomInDown;
 }
 
 h1{
@@ -113,26 +206,29 @@ h2, p{
 
 .my-name, .about-me{
     margin-bottom:2rem;
+    z-index:4;
+    color:white;
 }
 
 .projects{
-    background:black;
+    background:#0A1224;
+    z-index:6;
 }
 
 .projects::before{
     content: '';
-    background: black;
+    background: #0A1224;
     position: absolute;
     top: -50px;
     width: 110%;
     height: 150px;
     transform: rotate(-3deg);
-    z-index:-1;
+    z-index:5;
 }
 
 .projects::after{
     content: '';
-    background: black;
+    background: #0A1224;
     position: absolute;
     bottom: -50px;
     width: 110%;
@@ -142,7 +238,7 @@ h2, p{
 
 .skills::before{
     content: '';
-    background: black;
+    background: #14213D;
     position: absolute;
     top: -50px;
     width: 110%;
@@ -155,7 +251,7 @@ h2, p{
 }
 
 .project-card{
-    border:0.5rem solid lightgray;
+    border:0.5rem solid #2A9D8F;
     border-radius:2.5rem;
     display:flex;
     justify-content:center;
@@ -209,7 +305,7 @@ h2, p{
 }
 
 .skills{
-    background:black;
+    background:#14213D;
 }
 
 .skill {
