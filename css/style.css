@@ -6,6 +6,21 @@
     text-align:center;
 }
 
+.black-curtain{
+    background:black;
+    width: 100vw;
+    height:100vw;
+    z-index:2;
+    position:absolute;    
+    animation:move 0.8s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move {
+    from {transform:translateX(0%);}
+    to {transform:translateX(-100%);}
+  }
+
 body{
     width:100vw;
     overflow-x:hidden;
