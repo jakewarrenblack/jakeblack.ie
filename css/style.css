@@ -71,6 +71,11 @@ textarea{
 #close{
     background:transparent;
     border:none;
+    transition:all 1s ease;
+}
+
+#close:hover{
+    transform:rotate(360deg);
 }
 
 .translate0{
@@ -318,7 +323,8 @@ h2, p{
     position: absolute;
     top: -50px;
     width: 110%;
-    height: 100px;
+    /* height: 100px; */
+    height:8rem;
     transform: rotate(-3deg);
 }
 
@@ -341,29 +347,15 @@ h2, p{
     transition:all ease 300ms;
     /* 3d transform stuff */
     /* allow transform to occur within centre of container */
-    transition:transform 1s;
-    transform-style:preserve-3d;
 }
 
 .card-face{
     height:100%;
     width:100%;
     backface-visibility: hidden;
-}
-
-.card-back{
-    background:#14213D;
-    transform:rotateY(180deg);
-    height:100%;
-    width:100%;
-    position:absolute;
-    align-self:center;
-    justify-content: center;
-    top:0;
-    left:0;
-    border-radius:1.8rem;
     display:flex;
-    flex-direction: column;
+    flex-direction:column;
+    justify-content:space-around;
 }
 
 .github-stats{
@@ -397,17 +389,9 @@ button{
     text-transform:uppercase;
 }
 
-
-.project-card:hover{
-    transform:rotateY(180deg)!important;
-}
-
 button:hover{
     cursor:pointer;
 }
-
-
-
 
 .project-card:hover{
     transform:translateY(-5%);
@@ -417,6 +401,7 @@ button:hover{
     /* width:80%;
     padding:2rem; */
     margin:1rem 0 1rem 0;
+    height:60%;
 }
 
 .project-card-image img{
@@ -426,6 +411,7 @@ button:hover{
 .project-card-image img{
     width:100%;
     height:100%;
+    object-fit:contain;
 }
 
 .projects-row{
@@ -435,6 +421,7 @@ button:hover{
     perspective:1000px;
     perspective-origin: center center;
     z-index:12;
+    width:100%;
 }
 
 .project-card-title, .project-card-description{
