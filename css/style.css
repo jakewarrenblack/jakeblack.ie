@@ -311,9 +311,9 @@ h2, p{
     content: '';
     background: #0A1224;
     position: absolute;
-    bottom: -50px;
+    bottom: -5rem;
     width: 110%;
-    height: 150px;
+    height: 15rem;
     transform: rotate(-3deg);
 }
 
@@ -321,10 +321,10 @@ h2, p{
     content: '';
     background: #14213D;
     position: absolute;
-    top: -50px;
+    top: -5rem;
     width: 110%;
     /* height: 100px; */
-    height:8rem;
+    height:10rem;
     transform: rotate(-3deg);
 }
 
