@@ -501,5 +501,10 @@ button:hover{
 
     .skills{
         width:100%;
+        margin-top:0;
+    }
+
+    .projects::before, .projects::after, .skills::before{
+        display:none;
     }
 }
